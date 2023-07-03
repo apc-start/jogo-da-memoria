@@ -25,9 +25,17 @@ const checkEndGame = () => {
   if (disabledCards.length === 10) {
     clearInterval(this.loop);
     //alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
-  const modal = document.querySelectorAll('.modal');
-  modal[0].style.setProperty("display","flex");
-
+    const modal = document.querySelectorAll('.modal');
+    modal[0].style.setProperty("display","flex");
+    setTimeout(() => {
+      const a = document.createElement("a");
+      a.style.display = "none";
+      a.href = "https://apcstart.vercel.app/Jogos";
+      a.download = "qr-code.png";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, 5000);
   }
 }
 
